@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import * as controllers from './controllers';
+import * as controllers from "./controllers";
 import * as services from './services';
 import { MongooseModule } from "@nestjs/mongoose";
 import { ConfigModule, ConfigService } from "@nestjs/config";
