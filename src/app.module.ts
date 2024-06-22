@@ -3,22 +3,10 @@ import * as controllers from "./controllers";
 import * as services from './services';
 import { MongooseModule } from "@nestjs/mongoose";
 import { ConfigModule, ConfigService } from "@nestjs/config";
-// import {
-//   User,
-//   UserSchema,
-//   Nft,
-//   NftSchema,
-//   Data,
-//   DataSchema,
-//   Comment,
-//   CommentSchema,
-//   Post,
-//   PostSchema,
-//   SocialUser,
-//   SocialUserSchema,
-//   ENft,
-//   ENftSchema
-// } from "./schemas";
+import {
+  User,
+  UserSchema,
+} from "./schemas";
 import configuration from "src/configs/configuration";
 
 @Module({
@@ -36,13 +24,7 @@ import configuration from "src/configs/configuration";
       inject: [ConfigService],
     }),
     MongooseModule.forFeature([
-      // { name: User.name, schema: UserSchema },
-      // { name: Nft.name, schema: NftSchema },
-      // { name: Data.name, schema: DataSchema },
-      // { name: Comment.name, schema: CommentSchema },
-      // { name: Post.name, schema: PostSchema },
-      // { name: SocialUser.name, schema: SocialUserSchema },
-      // { name: ENft.name, schema: ENftSchema }
+      { name: User.name, schema: UserSchema },
     ]),
     ConfigModule
   ],

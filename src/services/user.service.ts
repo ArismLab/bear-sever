@@ -11,12 +11,18 @@ export class UserService {
 
     async create(user: CreateUserDto): Promise<User> {
         const id = Math.random().toString(36).substring(7);
+        const userRef = await this.userModel.findOne({ id: user.refId }).exec();
+        if (!userRef) {
+            throw new Error("Referral user not found");
+        }
+        userRef.refAmount += 1;
         const createdUser = new this.userModel({
             id,
             address: user.address,
             refId: user.refId,
             refAmount: 0,
-            items:[]
+            items:[],
+            gasFee: 0,
         });
         return createdUser.save();
     }
