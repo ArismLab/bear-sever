@@ -34,7 +34,7 @@ export class User {
     items: Items;
 
     @Prop({ required: true })
-    gasFee: number;
+    gasFree: number;
 
 }
 
