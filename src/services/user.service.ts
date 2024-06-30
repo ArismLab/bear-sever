@@ -19,10 +19,11 @@ export class UserService {
         const createdUser = new this.userModel({
             id,
             address: user.address,
+            isDeployed: false,
             refId: user.refId,
             refAmount: 0,
             items:[],
-            gasFee: 0,
+            gasFree: 0,
         });
         return createdUser.save();
     }

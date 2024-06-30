@@ -25,6 +25,9 @@ export class User {
     address: string;
 
     @Prop({ required: true })
+    isDeployed: boolean;
+
+    @Prop({ required: true })
     refId: string;
 
     @Prop({ required: true })

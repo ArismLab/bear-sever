@@ -34,9 +34,6 @@ export class UserController {
 
     @Post()
     async create(@Body() user: CreateUserDto) {
-        if (user.address) {
-            throw new BadRequestException("New user address must not be defined");
-        }
         return this.userService.create(user);
     }
 }
